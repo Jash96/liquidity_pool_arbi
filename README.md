@@ -18,6 +18,9 @@ Create pools, make swaps, and calculate arbitrage potential
 - Lastly, my initial working and testing grounds was done on a Jupyter notebook and all of this can be seen in the 'testing_ground_arbitrage_uniswap.ipynb'
 
 
+## Steps to go through my code for the base questions:
+- Run 'LP_functions.py' , 'arbitrage_calculation_logic.py' and 'swap_method.py' to ensure that the pool objects are created and that you are able to see simulated swaps as well as the arbitrage calculations
+
 I was not able to fully solve the issue on how to trigger the calculations in non-blocking mode. However, I think I have figured out how to implement it but it would require re-factoring my pool functions to work in a multithreaded way. To elaborate, currently my "calculate_arbitrage_eth" function calls other functions like "swap", "swap_getInput", "optimal_dai" which are called in a blocking mode. To avoid this, I would need to change the way I call my functions. Alternatively, there is a method I could use using the Python library "asyncio" which would allow me to run processes in the background but I have not figured that out in the time constraint.
 
 
